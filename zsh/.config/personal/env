@@ -1,0 +1,30 @@
+#!/bin/env bash
+
+addToPath() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$PATH:$1
+    fi
+}
+
+addToPathFront() {
+    if [[ "$PATH" != *"$1"* ]]; then
+        export PATH=$1:$PATH
+    fi
+}
+
+commitDotFiles() {
+    pushd $DOTFILES
+    pushd personal
+    git add .
+    git commit -m $1 
+    git push origin main
+    popd
+    git add .
+    git commit -m $1
+    git push origin main
+    popd
+}
+
+export GOPATH="$HOME/go"
+
+

@@ -1,0 +1,6 @@
+#!/bin/env bash
+
+alias gotest="go test -coverprofile=c.out -timeout=30s -shuffle=on ./... && go tool cover -func=c.out && go tool cover -html=c.out"
+
+alias vim="nvim"
+
