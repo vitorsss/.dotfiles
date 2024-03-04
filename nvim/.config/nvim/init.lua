@@ -532,7 +532,9 @@ require('lazy').setup {
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = { -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#configuration
+	  gofumpt = true,
+        },
         -- pyright = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
@@ -585,6 +587,7 @@ require('lazy').setup {
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format lua code
+	'gopls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 

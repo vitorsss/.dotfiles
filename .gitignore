@@ -1,3 +1,6 @@
 bin/.local/share
 bin/.local/state
 **/.vagrant/*
+*.swp
+nvim/.config/nvim/lazy-lock.json
+

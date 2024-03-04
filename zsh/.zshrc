@@ -9,7 +9,8 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-PERSONAL=$HOME/.config/personal
+export XDG_CONFIG_HOME=$HOME/.config
+PERSONAL=$XDG_CONFIG_HOME/personal
 source $PERSONAL/env
 for i in `find -L $PERSONAL | grep -v personal/env`; do
     source $i

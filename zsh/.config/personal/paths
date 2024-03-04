@@ -3,4 +3,5 @@
 addToPath /usr/local/go/bin
 addToPath $GOPATH/bin
 addToPath /opt/nvim-linux64/bin
+addToPath $HOME/.local/scripts
 
