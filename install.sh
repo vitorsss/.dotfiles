@@ -1,10 +1,15 @@
-#!/bin/env bash
+#!/bin/bash
 
 DOTFILES=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
-export XDG_CONFIG_HOME=$HOME/.config
+source $DOTFILES/config.sh
 
-sudo apt update
-sudo apt install -y gcc make unzip git ripgrep stow tmux jq btop zsh cargo fd-find 
+if [[ "$KERNEL_NAME" == "darwin" ]]; then
+    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    brew install gcc make unzip git ripgrep stow tmux jq btop zsh rust fd
+else
+    sudo apt update
+    sudo apt install -y gcc make unzip git ripgrep stow tmux jq btop zsh rust-all fd-find 
+fi
 
 KEEP_ZSHRC=yes RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 mv $HOME/.zshrc $HOME/.zshrc.old

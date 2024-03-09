@@ -1,4 +1,8 @@
-#!/bin/env bash
+#!/bin/bash
 
-sudo apt update
-
+KERNEL_NAME=$(uname | tr '[:upper:]' '[:lower:]')
+if [[ $KERNEL_NAME == "darwin" ]]; then
+    brew update
+else
+    sudo apt update
+fi

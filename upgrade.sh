@@ -1,4 +1,4 @@
-#!/bin/env bash
+#!/bin/bash
 
 DOTFILES=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
@@ -6,17 +6,26 @@ source $DOTFILES/config.sh
 
 $DOTFILES/update.sh
 
-sudo apt upgrade -y
+if [[ "$KERNEL_NAME" == "darwin" ]]; then
+    brew upgrade
+else
+    sudo apt upgrade -y
+fi
 
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
-sudo rm -rf /opt/nvim*
-sudo tar -C /opt -xzf nvim-linux64.tar.gz
-rm -f nvim-linux64.tar.gz
+if [[ "$KERNEL_NAME" == "darwin" ]]; then
+    curl -L -o nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-macos.tar.gz
+    xattr -c nvim.tar.gz
+else
+    curl -L -o nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+fi
+sudo rm -rf /usr/local/nvim*
+sudo tar -C /usr/local -xzf nvim.tar.gz
+rm -f nvim.tar.gz
 
-curl -LO https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
-sudo rm -rf /url/local/go
-sudo tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
-rm -f go1.22.0.linux-amd64.tar.gz
+curl -L -o go.tar.gz https://go.dev/dl/$(curl -s https://go.dev/VERSION\?m\=text | head -n 1).$KERNEL_NAME-$KERNEL_ARCH.tar.gz
+sudo rm -rf /usr/local/go
+sudo tar -C /usr/local -xzf go.tar.gz
+rm -f go.tar.gz
 
 pushd $DOTFILES
 for folder in $STOW_FOLDERS; do
