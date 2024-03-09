@@ -8,7 +8,7 @@ if [[ "$KERNEL_NAME" == "darwin" ]]; then
     brew install gcc make unzip git ripgrep stow tmux jq btop zsh rust fd
 else
     sudo apt update
-    sudo apt install -y gcc make unzip git ripgrep stow tmux jq btop zsh rust-all fd-find 
+    sudo apt install -y gcc make unzip git ripgrep stow tmux curl jq btop zsh rust-all fd-find 
 fi
 
 KEEP_ZSHRC=yes RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
