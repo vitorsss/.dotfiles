@@ -3,5 +3,6 @@
 addToPath /usr/local/go/bin
 addToPath $GOPATH/bin
 addToPath /usr/local/nvim-linux64/bin
-addToPath $HOME/.local/scripts
+addToPath $HOME/.config/scripts
+addToPath $HOME/.cargo/bin
 

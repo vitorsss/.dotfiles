@@ -1,6 +1,5 @@
 #!/bin/bash
 
-export STOW_FOLDERS="nvim tmux zsh bin"
 export XDG_CONFIG_HOME=$HOME/.config
 
 export KERNEL_NAME=$(uname | tr '[:upper:]' '[:lower:]')

@@ -12,6 +12,8 @@ else
     sudo apt upgrade -y
 fi
 
+cargo install --git https://github.com/RaphGL/Tuckr.git
+
 if [[ "$KERNEL_NAME" == "darwin" ]]; then
     curl -L -o nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-macos.tar.gz
     xattr -c nvim.tar.gz
@@ -28,10 +30,7 @@ sudo tar -C /usr/local -xzf go.tar.gz
 rm -f go.tar.gz
 
 pushd $DOTFILES
-for folder in $STOW_FOLDERS; do
-  echo "stow -R $folder"
-  stow -R $folder
-done
+$HOME/.cargo/bin/tuckr add \*
 popd
 
 /usr/local/go/bin/go install github.com/junegunn/fzf@latest
