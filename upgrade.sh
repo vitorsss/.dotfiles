@@ -6,11 +6,14 @@ source $DOTFILES/config.sh
 
 $DOTFILES/update.sh
 
-if [[ "$KERNEL_NAME" == "darwin" ]]; then
-    brew upgrade
-else
-    sudo apt upgrade -y
-fi
+case $OS in
+    macos) brew upgrade;
+    ;;
+    ubuntu|debian) sudo apt upgrade -y;
+    ;;
+    arch) sudo pacman --sync --sysupgrade --noconfirm;
+    ;;
+esac
 
 cargo install --git https://github.com/RaphGL/Tuckr.git
 

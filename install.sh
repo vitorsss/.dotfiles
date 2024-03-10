@@ -3,13 +3,17 @@
 DOTFILES=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 source $DOTFILES/config.sh
 
-if [[ "$KERNEL_NAME" == "darwin" ]]; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    brew install gcc make unzip git ripgrep tmux jq btop zsh rust fd
-else
-    sudo apt update
-    sudo apt install -y gcc make unzip git ripgrep tmux curl jq btop zsh rust-all fd-find 
-fi
+case $OS in
+    macos) /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
+           brew install gcc make unzip git ripgrep tmux jq btop zsh rust fd python3;
+    ;;
+    ubuntu|debian) sudo apt update;
+                   sudo apt install -y gcc make unzip git ripgrep tmux curl jq btop zsh rust-all fd-find python3;
+    ;;
+    arch) sudo pacman --sync --refresh;
+          sudo pacman --sync --needed --noconfirm gcc make unzip git ripgrep tmux curl jq btop zsh rust fd python3;
+    ;;
+esac
 
 KEEP_ZSHRC=yes RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 mv $HOME/.zshrc $HOME/.zshrc.old
