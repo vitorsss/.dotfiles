@@ -16,5 +16,7 @@ for i in `find -L $PERSONAL | grep -v personal/env`; do
     source $i
 done
 
-alias gotest="go test -coverprofile=c.out -timeout=30s -shuffle=on ./... && go tool cover -func=c.out && go tool cover -html=c.out"
+if [[ -f $HOME/.zshrc.work ]]; then
+    source $HOME/.zshrc.work
+fi
 

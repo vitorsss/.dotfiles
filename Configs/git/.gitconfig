@@ -1,0 +1,22 @@
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[user]
+	email = silva.vitor.soares@gmail.com
+	name = Vitor Soares Silva
+[includeIf "hasconfig:remote.*.url:**nubank/**"]
+	path = ~/.gitconfig.work
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[url "ssh://git@github.com/"]
+	insteadOf = https://github.com/
+[url "git@github.com:"]
+	insteadOf = git://github.com/
