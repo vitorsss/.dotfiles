@@ -7,8 +7,6 @@ zstyle ':omz:update' frequency 13
 
 plugins=(git)
 
-source $ZSH/oh-my-zsh.sh
-
 export XDG_CONFIG_HOME=$HOME/.config
 PERSONAL=$XDG_CONFIG_HOME/personal
 source $PERSONAL/env
@@ -19,4 +17,6 @@ done
 if [[ -f $HOME/.zshrc.work ]]; then
     source $HOME/.zshrc.work
 fi
+
+source $ZSH/oh-my-zsh.sh
 

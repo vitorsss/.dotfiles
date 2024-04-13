@@ -334,7 +334,14 @@ require("lazy").setup({
 				--     i = { ['<c-enter>'] = 'to_fuzzy_refine' },
 				--   },
 				-- },
-				-- pickers = {}
+				pickers = {
+					find_files = {
+						find_command = { "rg", "--files", "--iglob", "!.git", "--hidden" },
+					},
+					live_grep = {
+						additional_args = { "--iglob", "!.git", "--hidden" },
+					},
+				},
 				extensions = {
 					["ui-select"] = {
 						require("telescope.themes").get_dropdown(),

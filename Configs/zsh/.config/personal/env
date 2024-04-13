@@ -14,17 +14,13 @@ addToPathFront() {
 
 commitDotFiles() {
     pushd $DOTFILES
-    pushd personal
-    git add .
-    git commit -m $1 
-    git push origin main
-    popd
     git add .
     git commit -m $1
     git push origin main
     popd
 }
 
+export DOTFILES="$HOME/.dotfiles/"
 export GOPATH="$HOME/go"
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
