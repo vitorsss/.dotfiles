@@ -15,6 +15,13 @@ case $OS in
     ;;
 esac
 
+nvm install stable
+
+sdk selfupdate
+sdk install java 22-amzn
+sdk install java 11.0.22-amzn
+sdk install java 8.0.402-amzn
+
 cargo install --git https://github.com/RaphGL/Tuckr.git
 
 if [[ "$KERNEL_NAME" == "darwin" ]]; then

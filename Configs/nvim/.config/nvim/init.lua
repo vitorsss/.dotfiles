@@ -102,7 +102,7 @@ vim.g.have_nerd_font = false
 vim.opt.number = true
 -- You can also add relative line numbers, to help with jumping.
 --  Experiment for yourself to see if you like it!
--- vim.opt.relativenumber = true
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
@@ -531,21 +531,13 @@ require("lazy").setup({
 			--  - settings (table): Override the default settings passed when initializing the server.
 			--        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
 			local servers = {
-				-- clangd = {},
+				clangd = {},
+				clojure_lsp = {},
 				gopls = { -- https://github.com/golang/tools/blob/master/gopls/doc/vim.md#configuration
 					gofumpt = true,
 				},
-				-- pyright = {},
-				-- rust_analyzer = {},
-				-- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-				--
-				-- Some languages (like typescript) have entire language plugins that can be useful:
-				--    https://github.com/pmizio/typescript-tools.nvim
-				--
-				-- But for many setups, the LSP (`tsserver`) will work just fine
-				-- tsserver = {},
-				--
-
+				html = {},
+				htmx = {},
 				lua_ls = {
 					-- cmd = {...},
 					-- filetypes = { ...},
@@ -560,6 +552,9 @@ require("lazy").setup({
 						},
 					},
 				},
+				marksman = {},
+				templ = {},
+				tsserver = {},
 			}
 
 			-- Ensure the servers and tools above are installed
@@ -575,7 +570,6 @@ require("lazy").setup({
 			local ensure_installed = vim.tbl_keys(servers or {})
 			vim.list_extend(ensure_installed, {
 				"stylua", -- Used to format lua code
-				"gopls",
 			})
 			require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
 
