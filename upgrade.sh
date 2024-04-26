@@ -15,7 +15,11 @@ case $OS in
     ;;
 esac
 
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" # This loads nvm
+
 nvm install stable
+
+[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
 sdk selfupdate
 sdk install java 22-amzn
