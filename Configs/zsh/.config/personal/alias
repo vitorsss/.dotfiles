@@ -4,3 +4,4 @@ alias gotest="go test -coverprofile=c.out -timeout=30s -shuffle=on ./... && go t
 
 alias vim="nvim"
 
+alias sd="cd \$(find ~/dev/ws/*/ -mindepth 1 -maxdepth 1 -type d | fzf || pwd)"
