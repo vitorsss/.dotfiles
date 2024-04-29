@@ -27,6 +27,7 @@ sdk install java 11.0.22-amzn
 sdk install java 8.0.402-amzn
 
 cargo install --git https://github.com/RaphGL/Tuckr.git
+cargo install gitui --locked
 
 if [[ "$KERNEL_NAME" == "darwin" ]]; then
     curl -L -o nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-macos.tar.gz
