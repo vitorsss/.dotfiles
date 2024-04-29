@@ -15,10 +15,12 @@ case $OS in
     ;;
 esac
 
+export NVM_DIR="$([ -d "${XDG_CONFIG_HOME-}/nvm" ] && printf %s "${XDG_CONFIG_HOME}/nvm" || printf %s "${HOME}/.nvm")"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" # This loads nvm
 
 nvm install stable
 
+export SDKMAN_DIR="$HOME/.sdkman"
 [ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
 sdk selfupdate
