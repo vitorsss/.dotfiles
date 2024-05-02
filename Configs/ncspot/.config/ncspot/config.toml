@@ -1,0 +1,29 @@
+use_nerdfont = true
+volnorm = true
+shuffle = true
+repeat = "playlist"
+notify = true
+backend = "pulseaudio"
+backend_device = "default"
+ap-port = 4070
+
+# https://ncspot-theme-generator.vaa.red/
+# https://github.com/wojciech-zurek/ncspot-tokyo-night-theme
+[theme]
+background = "#1a1b26"
+primary = "#9aa5ce"
+secondary = "#414868"
+title = "#9ece6a"
+playing = "#7aa2f7"
+playing_selected = "#bb9af7"
+playing_bg = "#24283b"
+highlight = "#c0caf5"
+highlight_bg = "#24283b"
+error = "#414868"
+error_bg = "#f7768e"
+statusbar = "#ff9e64"
+statusbar_progress = "#7aa2f7"
+statusbar_bg = "#1a1b26"
+cmdline = "#c0caf5"
+cmdline_bg = "#24283b"
+search_match = "#f7768e"

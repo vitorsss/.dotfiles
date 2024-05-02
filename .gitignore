@@ -3,4 +3,5 @@ bin/.local/state
 **/.vagrant/*
 *.swp
 Configs/nvim/.config/nvim/lazy-lock.json
+Configs/ncspot/.config/ncspot/userstate.cbor
 

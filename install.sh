@@ -5,13 +5,13 @@ source $DOTFILES/config.sh
 
 case $OS in
     macos) /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
-           brew install gcc make unzip zip git ripgrep tmux jq btop zsh rust fd python3 platformio;
+           brew install gcc make unzip zip git ripgrep tmux jq btop zsh rust fd python3 platformio ncspot;
     ;;
     ubuntu|debian) sudo apt update;
-                   sudo apt install -y gcc make unzip zip git ripgrep tmux curl jq btop zsh rust-all fd-find python3 platformio;
+                   sudo apt install -y gcc make unzip zip git ripgrep tmux curl jq btop zsh rust-all fd-find python3 platformio ncspot;
     ;;
     arch) sudo pacman --sync --refresh;
-          sudo pacman --sync --needed --noconfirm gcc make unzip zip git ripgrep tmux curl jq btop zsh rust fd python3 platformio-core;
+          sudo pacman --sync --needed --noconfirm gcc make unzip zip git ripgrep tmux curl jq btop zsh rust fd python3 platformio-core ncspot;
     ;;
 esac
 
