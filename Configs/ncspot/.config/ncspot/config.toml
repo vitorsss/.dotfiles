@@ -3,10 +3,7 @@ volnorm = true
 shuffle = true
 repeat = "playlist"
 notify = true
-backend = "pulseaudio"
-backend_device = "default"
-ap-port = 4070
-
+audio_cache = true
 # https://ncspot-theme-generator.vaa.red/
 # https://github.com/wojciech-zurek/ncspot-tokyo-night-theme
 [theme]
