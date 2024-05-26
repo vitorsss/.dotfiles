@@ -3,6 +3,8 @@
 addToPath /usr/local/go/bin
 addToPath $GOPATH/bin
 addToPath /usr/local/nvim-linux64/bin
+addToPath /usr/local/nvim-macos-x86_64/bin
+addToPath /usr/local/nvim-macos-arm64/bin
 addToPath $HOME/.config/scripts
 addToPath $HOME/.cargo/bin
 export PATH="/opt/homebrew/bin:$PATH"

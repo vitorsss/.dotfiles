@@ -32,7 +32,11 @@ cargo install --git https://github.com/RaphGL/Tuckr.git
 cargo install gitui --locked
 
 if [[ "$KERNEL_NAME" == "darwin" ]]; then
-    curl -L -o nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-macos.tar.gz
+    if [[ "$KERNEL_ARCH" == "arm64" ]]; then
+        curl -L -o nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-macos-arm64.tar.gz
+    else
+        curl -L -o nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-macos-x86_64.tar.gz
+    fi
     xattr -c nvim.tar.gz
 else
     curl -L -o nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
