@@ -133,6 +133,7 @@ return {
 				},
 				html = {},
 				htmx = {},
+				jsonls = {},
 				lua_ls = {
 					-- cmd = {...},
 					-- filetypes = { ...},
@@ -150,6 +151,7 @@ return {
 				marksman = {},
 				templ = {},
 				tsserver = {},
+				yamlls = {},
 			}
 
 			-- Ensure the servers and tools above are installed
