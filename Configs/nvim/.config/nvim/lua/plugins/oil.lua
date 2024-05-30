@@ -7,7 +7,6 @@ return {
 				columns = { "icon" },
 				keymaps = {
 					["<C-h>"] = false,
-					["<M-h>"] = "actions.select_split",
 				},
 				lsp_file_methods = {
 					timeout_ms = 5000,
