@@ -22,8 +22,9 @@ return {
 			end, { desc = string.format("Harpoon Go Idx %d", idx) })
 		end
 
-		require("which-key").register({
-			["<leader>h"] = { name = "[H]arpoon", _ = "which_key_ignore" },
+		require("which-key").add({
+			{ "<leader>h", group = "[H]arpoon" },
+			{ "<leader>h_", hidden = true },
 		})
 	end,
 }
