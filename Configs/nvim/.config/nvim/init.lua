@@ -1,6 +1,7 @@
 require("my.options")
 require("my.autocmds")
 require("my.keymaps")
+require("my.filetypes")
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
