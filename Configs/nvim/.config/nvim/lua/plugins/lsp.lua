@@ -150,7 +150,7 @@ return {
 				},
 				marksman = {},
 				templ = {},
-				tsserver = {},
+				ts_ls = {},
 				yamlls = {},
 			}
 
