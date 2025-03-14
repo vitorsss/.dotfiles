@@ -5,3 +5,5 @@ alias gotest="go test -coverprofile=c.out -timeout=30s -shuffle=on ./... && go t
 alias vim="nvim"
 
 alias sd="cd \$(find ~/dev ~/dev/ws/* -mindepth 1 -maxdepth 1 -type d | cat - <(echo ~/.dotfiles) | fzf || pwd)"
+
+alias gclear="git fetch origin --prune; git branch | grep -v main | grep -v master | xargs git branch -D;"
