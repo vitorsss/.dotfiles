@@ -10,6 +10,22 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 -- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+vim.keymap.set("t", "<C-l><C-l>", [[<C-\><C-N>:lua ClearTerm(0)<CR>]], { desc = "Clear terminal" })
+vim.keymap.set("t", "<C-l><C-l><C-l>", [[<C-\><C-N>:lua ClearTerm(1)<CR>]], { desc = "Reset terminal" })
+
+function ClearTerm(reset)
+	vim.opt_local.scrollback = 1
+
+	vim.api.nvim_command("startinsert")
+	if reset == 1 then
+		vim.api.nvim_feedkeys("reset", "t", false)
+	else
+		vim.api.nvim_feedkeys("clear", "t", false)
+	end
+	vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<cr>", true, false, true), "t", true)
+
+	vim.opt_local.scrollback = 10000
+end
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
