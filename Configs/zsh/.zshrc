@@ -1,3 +1,8 @@
+# time ZSH_DEBUGRC=1 zsh -i -c exit
+if [[ -n "$ZSH_DEBUGRC" ]]; then
+  zmodload zsh/zprof
+fi
+
 export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
@@ -20,3 +25,6 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+if [[ -n "$ZSH_DEBUGRC" ]]; then
+  zprof
+fi
