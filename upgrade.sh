@@ -16,7 +16,7 @@ case $OS in
 esac
 
 export NVM_DIR="$([ -d "${XDG_CONFIG_HOME-}/nvm" ] && printf %s "${XDG_CONFIG_HOME}/nvm" || printf %s "${HOME}/.nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" --no-use # This loads nvm
 
 nvm install stable
 
