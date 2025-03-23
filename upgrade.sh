@@ -39,7 +39,11 @@ if [[ "$KERNEL_NAME" == "darwin" ]]; then
     fi
     xattr -c nvim.tar.gz
 else
-    curl -L -o nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.tar.gz
+    if [[ "$KERNEL_ARCH" == "arm64" ]]; then
+        curl -L -o nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-linux-arm64.tar.gz
+    else
+        curl -L -o nvim.tar.gz https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.tar.gz
+    fi
 fi
 sudo rm -rf /usr/local/nvim*
 sudo tar -C /usr/local -xzf nvim.tar.gz

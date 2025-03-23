@@ -2,7 +2,8 @@
 
 addToPath /usr/local/go/bin
 addToPath $GOPATH/bin
-addToPath /usr/local/nvim-linux64/bin
+addToPath /usr/local/nvim-linux-x86_64/bin
+addToPath /usr/local/nvim-linux-arm64/bin
 addToPath /usr/local/nvim-macos-x86_64/bin
 addToPath /usr/local/nvim-macos-arm64/bin
 addToPath $HOME/.config/scripts
