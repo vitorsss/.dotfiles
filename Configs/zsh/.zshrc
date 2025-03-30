@@ -15,7 +15,7 @@ plugins=(git fzf)
 export XDG_CONFIG_HOME=$HOME/.config
 PERSONAL=$XDG_CONFIG_HOME/personal
 source $PERSONAL/env
-for i in `find -L $PERSONAL | grep -v personal/env`; do
+for i in `find -L $PERSONAL -type f | grep -v personal/env`; do
     source $i
 done
 
