@@ -15,11 +15,6 @@ case $OS in
     ;;
 esac
 
-export NVM_DIR="$([ -d "${XDG_CONFIG_HOME-}/nvm" ] && printf %s "${XDG_CONFIG_HOME}/nvm" || printf %s "${HOME}/.nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh" --no-use # This loads nvm
-
-nvm install stable
-
 export SDKMAN_DIR="$HOME/.sdkman"
 [ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 
@@ -30,6 +25,7 @@ sdk install java 8.0.402-amzn
 
 cargo install --git https://github.com/RaphGL/Tuckr.git
 cargo install gitui --locked
+cargo install fnm --locked
 
 if [[ "$KERNEL_NAME" == "darwin" ]]; then
     if [[ "$KERNEL_ARCH" == "arm64" ]]; then
