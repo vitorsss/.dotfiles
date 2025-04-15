@@ -58,11 +58,61 @@ return {
 		-- Dap UI setup
 		-- For more information, see |:help nvim-dap-ui|
 		dapui.setup({
-			-- Set icons to characters that are more likely to work in every terminal.
-			--    Feel free to remove or use ones that you like more! :)
-			--    Don't feel like these are good choices.
+			element_mappings = {},
+			mappings = {
+				edit = "e",
+				expand = { "<CR>", "<2-LeftMouse>" },
+				open = "o",
+				remove = "d",
+				repl = "r",
+				toggle = "t",
+			},
+			expand_lines = true,
+			force_buffers = true,
+			layouts = {
+				{
+					elements = {
+						{
+							id = "scopes",
+							size = 0.25,
+						},
+						{
+							id = "breakpoints",
+							size = 0.25,
+						},
+						{
+							id = "stacks",
+							size = 0.25,
+						},
+						{
+							id = "watches",
+							size = 0.25,
+						},
+					},
+					position = "left",
+					size = 40,
+				},
+				{
+					elements = {
+						{
+							id = "repl",
+							size = 0.5,
+						},
+						{
+							id = "console",
+							size = 0.5,
+						},
+					},
+					position = "bottom",
+					size = 10,
+				},
+			},
+			render = { indent = 1 },
+			floating = { border = "single", mappings = { close = { "q", "<Esc>" } } },
 			icons = { expanded = "▾", collapsed = "▸", current_frame = "*" },
 			controls = {
+				enabled = true,
+				element = "repl",
 				icons = {
 					pause = "⏸",
 					play = "▶",
