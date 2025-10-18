@@ -22,3 +22,5 @@
 	insteadOf = git://github.com/
 [rerere]
 	enabled = true
+[core]
+	ignorecase = false

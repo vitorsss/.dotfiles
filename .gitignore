@@ -5,3 +5,4 @@ bin/.local/state
 Configs/nvim/.config/nvim/lazy-lock.json
 Configs/ncspot/.config/ncspot/userstate.cbor
 
+.DS_Store
