@@ -1,3 +1,6 @@
 fullscreen = true
 theme = tokyonight
 window-save-state = always
+notify-on-command-finish = unfocused
+notify-on-command-finish-action = no-bell,notify
+notify-on-command-finish-after = 5s

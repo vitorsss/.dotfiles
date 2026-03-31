@@ -205,6 +205,7 @@ return {
 				htmx = {
 					filetypes = { "html", "templ" },
 				},
+				java_language_server = {},
 				jsonls = {},
 				lua_ls = {
 					settings = {
