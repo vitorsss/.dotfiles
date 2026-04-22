@@ -1,0 +1,16 @@
+{
+  "theme": "tokyo-night-storm",
+  "lastChangelogVersion": "0.68.1",
+  "defaultThinkingLevel": "medium",
+  "defaultProvider": "ollama",
+  "defaultModel": "qwen3.5:9b",
+  "editorPaddingX": 1,
+  "treeFilterMode": "default",
+  "sessionDir": ".local/state/pi/sessions",
+  "packages": [
+    "npm:pi-subagents",
+    "npm:pi-mcp-adapter",
+    "npm:pi-web-access",
+    "npm:pi-mono-ask-user-question"
+  ]
+}
