@@ -18,6 +18,4 @@ esac
 KEEP_ZSHRC=yes RUNZSH=no sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 mv $HOME/.zshrc $HOME/.zshrc.old
 
-curl -s "https://get.sdkman.io" | bash
-
 $DOTFILES/upgrade.sh

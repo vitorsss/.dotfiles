@@ -15,17 +15,8 @@ case $OS in
     ;;
 esac
 
-export SDKMAN_DIR="$HOME/.sdkman"
-[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-
-sdk selfupdate
-sdk install java 22-amzn
-sdk install java 11.0.22-amzn
-sdk install java 8.0.402-amzn
-
 cargo install --git https://github.com/RaphGL/Tuckr.git
 cargo install gitui --locked
-cargo install fnm --locked
 
 if [[ "$KERNEL_NAME" == "darwin" ]]; then
     if [[ "$KERNEL_ARCH" == "arm64" ]]; then
